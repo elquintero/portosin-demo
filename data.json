@@ -1,0 +1,72 @@
+{
+ "version": 1,
+ "updated": "",
+ "inicio": {
+  "hero": {
+   "image": "",
+   "kicker": "Cafetería · menú del día",
+   "title": "Cafetería Portosín",
+   "button": "Ver la carta"
+  },
+  "nosotros": {
+   "title": "Un rincón para disfrutar de Portosín",
+   "text": "Cafetería para desayunar, comer y merendar en un ambiente cercano y tranquilo.\nCocina casera, producto fresco y un menú del día que cambia cada jornada.",
+   "image": ""
+  },
+  "carta": {
+   "title": "Carta",
+   "text": "Nuestra carta se basa en cocina casera con productos frescos. Consulta cada día el menú del día.",
+   "cards": [
+    {
+     "image": "",
+     "title": "Comida casera"
+    },
+    {
+     "image": "",
+     "title": "Desayunos y meriendas"
+    },
+    {
+     "image": "",
+     "title": "Cafés y copas"
+    }
+   ],
+   "button": "Ver carta"
+  },
+  "strip": [],
+  "galeriaTitle": "Nuestra galería fotográfica"
+ },
+ "carta": {
+  "activo": true,
+  "showDate": true,
+  "title": "Menú Portosín",
+  "primeros": [
+   "Fabada asturiana",
+   "Ensalada de queso de cabra",
+   "Spaghetti a la boloñesa",
+   "Acelgas rehogadas"
+  ],
+  "segundos": [
+   "Huevos rotos con jamón",
+   "Entrecot con pimientos de Padrón",
+   "Lubina a la plancha",
+   "Croquetas de setas"
+  ],
+  "postres": "tartas de queso, chocolate, Santiago o brownie. Pudin, flan, arroz con leche, melón, piña o café",
+  "precio": "15,00 €",
+  "medio": "12,00 €",
+  "nota": "Pan y bebida incluidos."
+ },
+ "galeria": {
+  "items": []
+ },
+ "contacto": {
+  "titulo": "Contacto",
+  "texto": "Estaremos encantados de atenderte.",
+  "direccion": "Calle (por completar)\nPortosín, A Coruña",
+  "telefono": "000 00 00 00",
+  "email": "",
+  "horario": "Lunes a domingo\n(por completar)",
+  "facebook": "",
+  "instagram": ""
+ }
+}

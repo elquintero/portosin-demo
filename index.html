@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cafetería Portosín · Menú del día en Portosín</title>
+<meta name="description" content="Cafetería Portosín: menú del día, desayunos y meriendas.">
+<meta name="theme-color" content="#2f5d9f">
+<link rel="canonical" href="https://cafeteriaportosin.com/">
+<meta property="og:type" content="website"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="Cafetería Portosín">
+<meta property="og:title" content="Cafetería Portosín · Menú del día en Portosín"><meta property="og:description" content="Desayunos, comidas y meriendas con cocina casera. Consulta cada día el menú del día.">
+<meta property="og:url" content="https://cafeteriaportosin.com/"><meta property="og:image" content="https://cafeteriaportosin.com/assets/img/og-image.png"><meta name="twitter:card" content="summary_large_image">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' data: blob: https://api.github.com https://raw.githubusercontent.com; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<script type="application/ld+json" id="ld"></script>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/img/icon-192.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#2f5d9f;--blue-d:#1f4278;--blue-l:#e8eef7;--cream:#faf7f2;--ink:#1d1d1f;--mut:#5d6572;--line:#d5deec;--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--sans:'Jost',system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0 0 .5em;color:var(--blue-d)}
+h2{font-size:clamp(1.9rem,5vw,2.6rem)}h3{font-size:1.5rem}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+section.blk{padding:56px 0}
+.btn{display:inline-block;border:2px solid var(--blue);background:var(--blue);color:#fff;padding:11px 26px;border-radius:2px;text-decoration:none;font-weight:500;letter-spacing:.06em;text-transform:uppercase;font-size:.85rem;cursor:pointer;font-family:var(--sans)}
+.btn:hover{background:var(--blue-d);border-color:var(--blue-d)}.btn.ghost{background:transparent;color:var(--blue)}.btn.ghost:hover{background:var(--blue);color:#fff}
+.btn.light{background:transparent;color:#fff;border-color:#fff}.btn.light:hover{background:#fff;color:var(--blue-d)}
+/* header */
+header.top{position:sticky;top:0;z-index:30;background:var(--cream);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.bar{display:flex;align-items:center;gap:12px;height:68px}
+.logo img{height:46px;width:auto}
+nav.menu{margin-left:auto;display:flex;gap:26px;align-items:center}
+nav.menu a{text-decoration:none;text-transform:uppercase;letter-spacing:.12em;font-size:.8rem;font-weight:500;padding:6px 0;border-bottom:2px solid transparent}
+nav.menu a:hover,nav.menu a.on{border-color:var(--blue);color:var(--blue)}
+.ic{border:0;background:none;cursor:pointer;color:var(--blue-d);width:42px;height:42px;display:grid;place-items:center;border-radius:50%}.ic:hover{background:var(--blue-l)}
+.ic svg{width:24px;height:24px}.burger{display:none}
+.gear[hidden]{display:none}#foot img{touch-action:manipulation;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent}
+.gear.on{color:#fff;background:var(--blue)}
+@media(max-width:760px){
+ .burger{display:grid;margin-left:auto}
+ nav.menu{position:fixed;inset:68px 0 auto 0;margin:0;background:var(--cream);flex-direction:column;gap:0;border-bottom:1px solid var(--line);display:none;padding:8px 20px 16px;top:calc(68px + env(safe-area-inset-top))}
+ nav.menu.open{display:flex}nav.menu a{width:100%;padding:14px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+}
+.adm{background:var(--blue-d);color:#fff;font-size:.82rem;text-align:center;padding:5px 10px}.adm button{background:none;border:0;color:#fff;text-decoration:underline;cursor:pointer;font:inherit}
+/* hero */
+.hero{position:relative;min-height:74vh;display:grid;place-items:center;text-align:center;color:#fff;background:#2a3c57 center/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(20,35,60,.45),rgba(20,35,60,.6))}
+.hero>div{position:relative;padding:40px 20px;max-width:760px}
+.hero .kick{text-transform:uppercase;letter-spacing:.25em;font-size:.82rem;margin-bottom:12px}
+.hero h1{color:#fff;font-size:clamp(2.8rem,10vw,5.2rem);margin-bottom:.3em}
+/* about */
+.about{display:grid;gap:32px;align-items:center}
+@media(min-width:800px){.about{grid-template-columns:1fr 1fr;gap:56px}}
+.about img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.about p{color:var(--mut);margin:0 0 1em}
+.rule{width:64px;height:3px;background:var(--blue);margin:0 0 20px}
+/* carta teaser */
+.tease{background:#fff;text-align:center;border-block:1px solid var(--line)}
+.tease .lead{max-width:640px;margin:0 auto 32px;color:var(--mut)}
+.cards{display:grid;gap:20px;margin-bottom:32px}
+@media(min-width:700px){.cards{grid-template-columns:repeat(3,1fr)}}
+.cards figure{margin:0}.cards img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.cards figcaption{font-family:var(--serif);font-size:1.4rem;font-weight:600;color:var(--blue-d);padding-top:10px}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}.strip img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(min-width:760px){.grid{grid-template-columns:repeat(4,1fr)}}
+.grid img{width:100%;aspect-ratio:1;object-fit:cover;cursor:zoom-in;transition:opacity .2s}.grid img:hover{opacity:.85}
+.center{text-align:center;margin-top:28px}
+.page-h{background:var(--blue-l);text-align:center;padding:48px 20px 36px;border-bottom:1px solid var(--line)}.page-h h1{margin:0;font-size:clamp(2.2rem,7vw,3.4rem)}
+/* menú del día */
+.menu-card{max-width:520px;margin:32px 16px;background:#fff;border:2px solid var(--blue);outline:1px solid var(--blue);outline-offset:-8px;padding:34px 30px 26px;text-align:center;font-family:var(--serif);box-shadow:0 10px 30px rgba(47,93,159,.1)}
+.menu-card{margin-inline:auto}@media(max-width:560px){.menu-card{margin-inline:16px}}.menu-card h2{text-transform:uppercase;letter-spacing:.04em;font-size:1.7rem;margin:0 0 4px}
+.menu-card .date{color:var(--mut);font-size:1.05rem;margin-bottom:6px}
+.menu-card hr{border:0;border-top:4px solid var(--blue);margin:20px 0 14px}
+.menu-card h3{font-weight:500;font-size:1.5rem;margin:0 0 12px}
+.menu-card ul{list-style:none;padding:0;margin:0 0 6px}.menu-card li{font-size:1.25rem;padding:9px 0;color:#111}
+.menu-card .post{font-size:1.05rem;color:#111}.menu-card .post b{color:var(--blue);font-weight:600;font-size:1.25rem}
+.menu-card .price{display:flex;justify-content:space-between;align-items:baseline;margin-top:20px;font-size:1.05rem;gap:12px}.price b{font-size:1.4rem}
+.menu-card .note{margin:14px -10px -4px;padding:8px;background:var(--blue-l);color:var(--blue-d);font-family:var(--sans);font-size:.95rem}
+.empty{max-width:520px;margin:48px auto;text-align:center;color:var(--mut);font-family:var(--serif);font-size:1.5rem;padding:0 20px}
+/* contact */
+.contact{display:grid;gap:28px;max-width:760px;margin:0 auto}
+@media(min-width:700px){.contact{grid-template-columns:1fr 1fr}}
+.contact h3{margin-bottom:.2em}.contact p{margin:0 0 .4em;color:var(--mut);white-space:pre-line}
+.lb{position:fixed;inset:0;background:rgba(10,18,32,.92);z-index:80;display:none;place-items:center;padding:16px;cursor:zoom-out}.lb.open{display:grid}.lb img{max-height:92vh;max-width:96vw;object-fit:contain}
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 16px;border-radius:20px;font-size:.88rem;z-index:90;opacity:0;pointer-events:none;transition:opacity .25s}.toast.on{opacity:1}
+/* admin dialog */
+dialog{border:0;border-radius:14px;padding:0;width:min(720px,96vw);max-height:92vh;background:#fff;color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(15,25,45,.55)}
+@media(max-width:600px){dialog{width:100vw;max-width:100vw;height:100dvh;max-height:100dvh;border-radius:0}}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:2}
+.dh b{font-family:var(--serif);font-size:1.4rem;color:var(--blue-d)}.st{font-size:.8rem;color:var(--mut);margin-right:auto;margin-left:12px}.st.err{color:#b3261e}
+.tabs{display:flex;gap:4px;overflow-x:auto;padding:10px 14px 0;border-bottom:1px solid var(--line)}
+.tabs button{border:0;background:none;padding:9px 14px;cursor:pointer;font:500 .92rem var(--sans);color:var(--mut);border-bottom:3px solid transparent;white-space:nowrap}.tabs button.on{color:var(--blue-d);border-color:var(--blue)}
+.db{padding:16px 18px 24px;overflow:auto}
+.db label{display:block;font-size:.82rem;font-weight:500;color:var(--mut);margin:12px 0 4px}
+.db input[type=text],.db input[type=password],.db textarea{width:100%;border:1px solid #bfcbdd;border-radius:8px;padding:10px 12px;font:1rem var(--sans);background:#fff;color:var(--ink)}
+.db textarea{min-height:92px;resize:vertical}.db h4{margin:22px 0 4px;font-family:var(--serif);font-size:1.3rem;color:var(--blue-d);border-bottom:1px solid var(--line);padding-bottom:4px}
+.db .chk{display:flex;gap:8px;align-items:center;font-size:.95rem;color:var(--ink);font-weight:400}
+.db small{color:var(--mut);display:block;margin-top:4px}
+.imgf{display:flex;gap:12px;align-items:center;margin:10px 0}.imgf img{width:88px;height:66px;object-fit:cover;border-radius:6px;background:var(--blue-l);flex:none}
+.imgf b{display:block;font-size:.88rem;margin-bottom:4px}
+.sm{border:1px solid var(--blue);color:var(--blue);background:#fff;border-radius:7px;padding:6px 12px;font:500 .85rem var(--sans);cursor:pointer}.sm:hover{background:var(--blue-l)}.sm.red{border-color:#b3261e;color:#b3261e}
+.gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:10px;margin:12px 0}.gl div{border:1px solid var(--line);border-radius:8px;overflow:hidden}.gl img{width:100%;aspect-ratio:4/3;object-fit:cover}.gl span{display:flex;justify-content:space-between;padding:4px}.gl button{border:0;background:var(--blue-l);border-radius:6px;cursor:pointer;width:30px;height:28px;font-size:1rem}
+.db .lbl{font-size:.82rem;font-weight:500;color:var(--mut);margin:12px 0 4px}
+.dpick{display:flex;justify-content:space-between;align-items:center;width:100%;border:1px solid #bfcbdd;border-radius:8px;padding:10px 12px;background:#fff;font:1rem var(--sans);color:var(--ink);cursor:pointer}.dpick svg{width:22px;height:22px;color:var(--blue)}.dpick[aria-expanded=true]{border-color:var(--blue)}
+.cal{border:1px solid var(--line);border-radius:10px;padding:10px;margin:10px 0;max-width:360px;background:#fff}
+.ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}.ch b{font-family:var(--serif);font-size:1.3rem;color:var(--blue-d);text-transform:capitalize}
+.cw,.cg{display:grid;grid-template-columns:repeat(7,1fr);text-align:center}.cw span{font-size:.75rem;font-weight:600;color:var(--mut);padding:4px 0}
+.cd{border:0;background:none;height:40px;font:1rem var(--sans);color:var(--ink);cursor:pointer;border-radius:6px;position:relative}.cd:hover{background:var(--blue-l)}
+.cd.tod{text-decoration:underline;text-underline-offset:4px;font-weight:600}.cd.has:after{content:"";position:absolute;left:50%;bottom:4px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--blue)}
+.cd.sel{background:var(--blue);color:#fff}.cd.sel.has:after{background:#fff}
+.tip{background:var(--blue-l);border-radius:8px;padding:10px 12px;font-size:.88rem;color:var(--blue-d);margin:10px 0}
+#app:empty{min-height:60vh;display:grid;place-items:center}#app:empty:before{content:"";width:34px;height:34px;border:3px solid #dbe5f3;border-top-color:#2f5d9f;border-radius:50%;animation:sp .8s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+/* pulido */
+:focus-visible{outline:3px solid #f2b84b;outline-offset:2px;border-radius:2px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--blue-d);color:#fff;padding:10px 16px;z-index:100;border-radius:0 0 6px 6px;text-decoration:none}.skip:focus{top:0}
+img{background:var(--blue-l)}.logo img,#foot img{background:none}
+h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
+.hero{min-height:78svh}.hero h1,.hero .kick{text-shadow:0 2px 18px rgba(10,20,40,.45)}
+.btn{transition:background .2s,color .2s,border-color .2s}.grid img{border-radius:2px}
+.empty .btn{margin-top:18px;font-size:.85rem}
+#foot{background:var(--blue-d);color:#dbe6f6;text-align:center;padding:40px 20px calc(30px + env(safe-area-inset-bottom));font-size:.92rem}
+#foot img{height:44px;margin:0 auto 14px}.fi{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 22px;margin-bottom:14px}.fi a{text-decoration:none;border-bottom:1px solid rgba(219,230,246,.4)}.fi a:hover{color:#fff;border-color:#fff}.fc{opacity:.8;font-size:.82rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media print{header.top,#foot,#admbar,.btn,.toast{display:none}body{background:#fff}.menu-card{box-shadow:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#app" onclick="document.getElementById('app').focus()">Saltar al contenido</a>
+<header class="top"><div class="wrap bar">
+ <a class="logo" href="#inicio" aria-label="Cafetería Portosín"><img src="assets/img/logo.png" alt="Portosín"></a>
+ <nav class="menu" id="nav" aria-label="Principal">
+  <a href="#inicio" data-r="inicio">Inicio</a><a href="#carta" data-r="carta">Carta</a><a href="#nosotros" data-r="nosotros">Nosotros</a><a href="#galeria" data-r="galeria">Galería</a><a href="#contacto" data-r="contacto">Contacto</a>
+ </nav>
+ <button class="ic gear" id="gear" aria-label="Configuración" title="Configuración"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+ <button class="ic burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+</div></header>
+<div id="admbar"></div>
+<main id="app" tabindex="-1"></main>
+<footer id="foot"></footer>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagen ampliada"><img alt=""></div>
+<div class="toast" id="toast"></div>
+<dialog id="dlg"></dialog>
+<input type="file" id="file" accept="image/*" hidden>
+<input type="file" id="files" accept="image/*" multiple hidden>
+<script>
+'use strict';
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const para=t=>String(t||'').split(/\n+/).filter(x=>x.trim()).map(x=>`<p>${esc(x)}</p>`).join('');
+const APP_VERSION='2.0.0';
+const mkey=t=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit'}).format(t);
+const todayKey=()=>mkey(Date.now()-60000); // el día cambia a las 00:01 (hora de España)
+const fmtLong=k=>{const d=new Date(k+'T12:00:00Z').toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long',timeZone:'UTC'});return d.charAt(0).toUpperCase()+d.slice(1)};
+const EX={primeros:['Fabada asturiana','Ensalada de queso de cabra','Spaghetti a la boloñesa','Acelgas rehogadas'],segundos:['Huevos rotos con jamón','Entrecot con pimientos de Padrón','Lubina a la plancha','Croquetas de setas'],postres:'tartas de queso, chocolate, Santiago o brownie. Pudin, flan, arroz con leche, melón, piña o café',precio:'15,00 €',medio:'12,00 €',nota:'Pan y bebida incluidos.'};
+/* ---------- Datos por defecto (sin imágenes: nunca se muestran fotos de relleno) ---------- */
+const DEF={version:2,updated:'',visibilidad:{inicio:true,nosotros:true,carta:true,galeria:true,contacto:true,menuDia:true,precios:true,redes:true},
+ inicio:{
+  hero:{image:'',kicker:'Cafetería · menú del día',title:'Cafetería Portosín',button:'Ver la carta'},
+  nosotros:{title:'Un rincón para disfrutar de Portosín',text:'Cafetería para desayunar, comer y merendar en un ambiente cercano y tranquilo.\nCocina casera, producto fresco y un menú del día que cambia cada jornada.',image:''},
+  carta:{title:'Carta',text:'Nuestra carta se basa en cocina casera con productos frescos. Consulta cada día el menú del día.',
+   cards:[{image:'',title:'Comida casera'},{image:'',title:'Desayunos y meriendas'},{image:'',title:'Cafés y copas'}],button:'Ver carta'},
+  strip:[],
+  galeriaTitle:'Nuestra galería fotográfica'},
+ carta:{title:'Menú Portosín',menus:{}},
+ galeria:{items:[]},
+ contacto:{titulo:'Contacto',texto:'Estaremos encantados de atenderte.',direccion:'Calle (por completar)\nPortosín, A Coruña',telefono:'000 00 00 00',email:'',horario:'Lunes a domingo\n(por completar)',facebook:'',instagram:''}
+};
+const clone=o=>JSON.parse(JSON.stringify(o));
+const merge=(d,s)=>{if(Array.isArray(d)||typeof d!=='object'||d===null)return s===undefined?d:s;const o={};for(const k of new Set([...Object.keys(d),...Object.keys(s||{})]))o[k]=k in d?merge(d[k],s?s[k]:undefined):s[k];return o};
+const gp=(o,p)=>p.split('.').reduce((a,k)=>a==null?a:a[k],o);
+const sp=(o,p,v)=>{const k=p.split('.'),l=k.pop();const t=k.reduce((a,x)=>a[x],o);t[l]=v};
+let S=clone(DEF),cfg={},LS=localStorage,serverAdmin=false,serverReady=false,versions=[];
+const PATH='data.json';let timer=null,pushing=false,again=false,CONF={repo:'elquintero/portosin-data',branch:'main'};
+const repo=()=>cfg.repo||CONF.repo;
+const isAdmin=()=>serverAdmin;
+const vis=k=>S.visibilidad?.[k]!==false;
+const apiPost=async body=>{const r=await fetch('api/index.php',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',body:JSON.stringify(body)});const j=await r.json().catch(()=>({error:'Respuesta inválida del servidor'}));if(!r.ok)throw new Error(j.error||('Error '+r.status));return j;}
+const toast=(m)=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2200)};
+/* ---------- Páginas ---------- */
+const im=(s,alt='',x='')=>s?`<img src="${esc(s)}" alt="${esc(alt)}" loading="lazy" decoding="async"${x}>`:'';
+const imgs=(a,g)=>(a||[]).map((s,n)=>g?im(s,'Cafetería Portosín, foto '+(n+1),' tabindex="0" role="button"'):im(s)).join('');
+function pHome(){const i=S.inicio,h=i.hero;
+ return `${vis('inicio')?`<div class="hero" style="background-color:#2f5d9f${h.image?`;background-image:url('${esc(h.image).replace(/'/g,'%27')}')`:''}"><div><div class="kick">${esc(h.kicker)}</div><h1>${esc(h.title)}</h1><a class="btn light" href="#carta">${esc(h.button)}</a></div></div>`:''}
+ ${vis('nosotros')?`<section class="blk" id="nosotros"><div class="wrap about">${im(i.nosotros.image,'Interior de la Cafetería Portosín')}<div><div class="rule"></div><h2>${esc(i.nosotros.title)}</h2>${para(i.nosotros.text)}</div></div></section>`:''}
+ ${vis('carta')?`<section class="blk tease"><div class="wrap"><h2>${esc(i.carta.title)}</h2><p class="lead">${esc(i.carta.text)}</p><div class="cards">${i.carta.cards.map(c=>`<figure>${im(c.image)}<figcaption>${esc(c.title)}</figcaption></figure>`).join('')}</div><a class="btn" href="#carta">${esc(i.carta.button)}</a></div></section>`:''}
+ ${vis('galeria')&&i.strip&&i.strip.length?`<div class="strip">${imgs(i.strip)}</div>`:''}
+ ${vis('galeria')?`<section class="blk"><div class="wrap"><h2 style="text-align:center">${esc(i.galeriaTitle)}</h2><div class="grid">${imgs(S.galeria.items.slice(0,8),1)}</div><div class="center"><a class="btn ghost" href="#galeria">Ver galería completa</a></div></div></section>`:''}
+ ${vis('contacto')?pContactBlock():''}`}
+function pCarta(){const c=S.carta,k=todayKey(),m=c.menus&&c.menus[k]; if(!vis('menuDia'))return `<div class="page-h"><h1>Carta</h1></div><p class="empty">El menú del día no está disponible temporalmente.</p>`;
+ const head=`<div class="page-h"><h1>Carta</h1></div>`;
+ if(!m)return head+`<p class="empty">Hoy no hay menú del día publicado.<br>Consúltanos en el local o por teléfono.</p>${S.contacto.telefono&&/\d{6,}/.test(S.contacto.telefono.replace(/\s/g,''))&&!/^[0\s]+$/.test(S.contacto.telefono)?`<p class="empty" style="margin-top:0"><a class="btn" href="tel:${esc(S.contacto.telefono.replace(/\s/g,''))}">Llamar al ${esc(S.contacto.telefono)}</a></p>`:''}`;
+ const L=a=>`<ul>${(a||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`;
+ return head+`<article class="menu-card"><h2>${esc(c.title)}</h2><div class="date">${esc(fmtLong(k))}</div><hr><h3>Primer plato</h3>${L(m.primeros)}<hr><h3>Segundo plato</h3>${L(m.segundos)}<hr><p class="post"><b>Postres:</b> ${esc(m.postres)}</p>${vis('precios')?`<div class="price"><span><b>Menú: ${esc(m.precio)}</b></span><span>Medio menú: ${esc(m.medio)}</span></div>`:''}${m.nota?`<div class="note">${esc(m.nota)}</div>`:''}</article>`}
+function pGal(){return vis('galeria')?`<div class="page-h"><h1>Galería</h1></div><section class="blk"><div class="wrap"><div class="grid">${imgs(S.galeria.items,1)}</div></div></section>`:`<p class="empty">La galería no está disponible temporalmente.</p>`}
+function pContactBlock(){const c=S.contacto,map='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(c.direccion.replace(/\n/g,', '));
+ return `<section class="blk" id="contacto" style="background:#fff;border-top:1px solid var(--line)"><div class="wrap"><h2 style="text-align:center">${esc(c.titulo)}</h2><p style="text-align:center;color:var(--mut)">${esc(c.texto)}</p><div class="contact">
+ <div><h3>Dónde estamos</h3><p>${esc(c.direccion)}</p><p><a href="${map}" target="_blank" rel="noopener" style="color:var(--blue)">Cómo llegar →</a></p></div>
+ <div><h3>Horario</h3><p>${esc(c.horario)}</p></div>
+ <div><h3>Reservas</h3><p>${c.telefono?`<a href="tel:${esc(c.telefono.replace(/\s/g,''))}">${esc(c.telefono)}</a>`:''}</p>${c.email?`<p><a href="mailto:${esc(c.email)}">${esc(c.email)}</a></p>`:''}</div>
+ ${vis('redes')&&(c.facebook||c.instagram)?`<div><h3>Síguenos</h3><p>${c.facebook?`<a href="${esc(c.facebook)}" target="_blank" rel="noopener">Facebook</a>`:''} ${c.instagram?` · <a href="${esc(c.instagram)}" target="_blank" rel="noopener">Instagram</a>`:''}</p></div>`:''}
+ </div></div></section>`}
+function pContact(){return vis('contacto')?`<div class="page-h"><h1>${esc(S.contacto.titulo)}</h1></div>`+pContactBlock().replace('<h2 style="text-align:center">'+esc(S.contacto.titulo)+'</h2>',''):`<p class="empty">La información de contacto no está disponible temporalmente.</p>`}
+function seo(){try{const c=S.contacto,a=String(c.direccion||'').split('\n'),t=String(c.telefono||'').replace(/\s/g,''),o={'@context':'https://schema.org','@type':'CafeOrCoffeeShop',name:'Cafetería Portosín',url:'https://cafeteriaportosin.com/',image:'https://cafeteriaportosin.com/assets/img/og-image.png',servesCuisine:'Cocina casera',address:{'@type':'PostalAddress',streetAddress:a[0]||'',addressLocality:a[1]||'Portosín',addressCountry:'ES'}};if(/^\+?\d{9,}$/.test(t)&&!/^0+$/.test(t))o.telephone=t;$('#ld').textContent=JSON.stringify(o)}catch(e){}}
+function route(){let h=(location.hash||'#inicio').slice(1),r=['inicio','carta','galeria','contacto'].includes(h)?h:'inicio';
+ $('#app').innerHTML={inicio:pHome,carta:pCarta,galeria:pGal,contacto:pContact}[r]();
+ document.querySelectorAll('nav a').forEach(a=>{const k=a.dataset.r;a.hidden=(k==='nosotros'&&!vis('nosotros'))||(k==='carta'&&!vis('carta'))||(k==='galeria'&&!vis('galeria'))||(k==='contacto'&&!vis('contacto'));a.classList.toggle('on',k===(h==='nosotros'?'nosotros':r))});
+ $('#nav').classList.remove('open');$('#burger').setAttribute('aria-expanded','false');
+  document.title=r==='inicio'?'Cafetería Portosín · Menú del día en Portosín':{carta:'Carta del día',galeria:'Galería',contacto:'Contacto'}[r]+' · Cafetería Portosín';seo();
+ if(h==='nosotros'){const e=$('#nosotros');e&&e.scrollIntoView()}else if(!route.keep)window.scrollTo(0,0);
+ const c=S.contacto,tel=String(c.telefono||'').replace(/\s/g,''),ok=/\d{6,}/.test(tel)&&!/^[0+]+$/.test(tel);
+  $('#foot').innerHTML=`<img src="assets/img/logo-white.png" alt="Cafetería Portosín"><div class="fi"><a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(String(c.direccion||'').replace(/\n/g,', '))}" target="_blank" rel="noopener">Cómo llegar</a>${ok?`<a href="tel:${esc(tel)}">${esc(c.telefono)}</a>`:''}<a href="#carta">Menú del día</a><a href="#contacto">Contacto</a></div><div class="fc">© ${new Date().getFullYear()} Cafetería Portosín</div>`;
+  $('#gear').classList.toggle('on',isAdmin());$('#gear').hidden=!(isAdmin()||sessionStorage.getItem('pt_gear')==='1');
+}
+function repaint(){route.keep=true;route();route.keep=false}
+/* ---------- Persistencia: API PHP + SQLite ---------- */
+function setSt(m,err){const s=$('#st');if(s){s.textContent=m;s.classList.toggle('err',!!err)}}
+async function pull(){
+ try{const r=await fetch('api/index.php',{cache:'no-store',credentials:'same-origin'});if(!r.ok)throw new Error('No se pudo leer la base de datos');const j=await r.json();serverAdmin=!!j.admin;versions=j.versions||[];if(j.migrated&&j.data){S=merge(DEF,j.data);serverReady=true;try{LS.setItem('pt_cache',JSON.stringify(S))}catch(e){}}
+  else{serverReady=false;try{const u=`https://raw.githubusercontent.com/${repo()}/${CONF.branch||'main'}/data.json`,g=await fetch(u,{cache:'no-store'});if(g.ok)S=convertLegacy(await g.json());}catch(_){}}
+ }catch(e){try{const c=LS.getItem('pt_cache');if(c)S=merge(DEF,JSON.parse(c));else{const r=await fetch('data.json');if(r.ok)S=merge(DEF,await r.json())}}catch(_){} }
+}
+function convertLegacy(legacy){
+ const migrated=clone(DEF);for(const k of ['inicio','galeria','contacto'])if(legacy[k])migrated[k]=merge(migrated[k],legacy[k]);
+ if(legacy.visibilidad)migrated.visibilidad=merge(migrated.visibilidad,legacy.visibilidad);
+ if(legacy.carta){migrated.carta=merge(migrated.carta,legacy.carta);if(!legacy.carta.menus){const old={};for(const k of ['primeros','segundos','postres','precio','medio','nota'])if(legacy.carta[k]!==undefined)old[k]=legacy.carta[k];if(Object.keys(old).length)migrated.carta.menus[todayKey()]=old;}}
+ migrated.version=2;return migrated;
+}
+function save(){setSt('Cambios pendientes…');clearTimeout(timer);try{LS.setItem('pt_cache',JSON.stringify(S))}catch(e){}if(isAdmin())timer=setTimeout(push,700)}
+async function push(){
+ if(pushing){again=true;return}if(!isAdmin()){setSt('Inicia sesión para guardar',true);return}
+ pushing=true;setSt('Guardando en SQLite…');try{const j=await apiPost({action:'save',data:S});S=merge(DEF,j.data);serverReady=true;try{LS.setItem('pt_cache',JSON.stringify(S))}catch(e){}setSt('Borrador guardado '+new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}));repaint();}
+ catch(e){setSt(e.message,true);toast('No se pudieron guardar los cambios')}finally{pushing=false;if(again){again=false;push()}}
+}
+async function migrateFromGitHub(){
+ setSt('Buscando el JSON antiguo en GitHub…');let legacy=null;
+ const url=`https://raw.githubusercontent.com/${repo()}/${CONF.branch||'main'}/data.json`;
+ try{let r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error('GitHub no ha devuelto data.json ('+r.status+')');legacy=await r.json()}catch(e){throw new Error('No se pudo leer el JSON de GitHub. Comprueba config.json y que el repositorio sea público. '+e.message)}
+ const migrated=convertLegacy(legacy);
+ const j=await apiPost({action:'migrate',data:migrated});S=merge(DEF,j.data);serverReady=true;await pull();try{LS.setItem('pt_cache',JSON.stringify(S))}catch(e){}repaint();return j;
+}
+/* ---------- Imágenes: se reducen y se guardan dentro del JSON (data URL) ---------- */
+function shrink(file,max=1280,q=.74){return new Promise((ok,ko)=>{const u=URL.createObjectURL(file),im=new Image();im.onload=()=>{const k=Math.min(1,max/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*k);c.height=Math.round(im.height*k);const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);let o=c.toDataURL('image/webp',q);if(o.indexOf('data:image/webp')!==0)o=c.toDataURL('image/jpeg',q);ok(o)};im.onerror=()=>ko(new Error('imagen no válida'));im.src=u})}
+
+/* ---------- Imagen del menú (1080x1920) para estados de WhatsApp ---------- */
+async function menuImage(k){
+ const m=S.carta.menus[k];if(!m)return null;
+ try{await Promise.all([document.fonts.load('600 40px "Cormorant Garamond"'),document.fonts.load('500 40px "Cormorant Garamond"'),document.fonts.load('500 30px Jost')])}catch(e){}
+ const logo=await new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.onerror=()=>r(null);i.src='assets/img/logo.png'});
+ const W=1080,H=1920,c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');
+ const SER='"Cormorant Garamond",Georgia,serif',SAN='Jost,system-ui,sans-serif',BLUE='#2f5d9f',BD='#1f4278',cx=W/2,mw=780;
+ const wrap=(t,w)=>{const out=[];for(const para of String(t||'').split('\n')){let line='';for(const word of para.split(/\s+/).filter(Boolean)){const tt=line?line+' '+word:word;if(x.measureText(tt).width>w&&line){out.push(line);line=word}else line=tt}if(line)out.push(line)}return out};
+ const run=(K,Y,d)=>{let y=Y;
+  const txt=(t,w,sz,f,col,lh)=>{x.font=`${w} ${sz*K}px ${f}`;x.fillStyle=col;x.textAlign='center';x.textBaseline='middle';for(const l of wrap(t,mw)){const h=sz*K*lh;if(d)x.fillText(l,cx,y+h/2);y+=h}};
+  const hr=()=>{y+=24*K;if(d){x.fillStyle=BLUE;x.fillRect(cx-390,y,780,7*K)}y+=7*K+24*K};
+  const list=a=>{for(const t of a||[]){txt(t,500,46,SER,'#111',1.25);y+=12*K}};
+  if(logo){const h=120*K,w=logo.width*h/logo.height;if(d)x.drawImage(logo,cx-w/2,y,w,h);y+=h+22*K}
+  txt(String(S.carta.title||'').toUpperCase(),600,74,SER,BD,1.2);
+  txt(fmtLong(k),500,40,SER,'#5d6572',1.3);
+  hr();txt('Primer plato',500,56,SER,BLUE,1.3);y+=8*K;list(m.primeros);
+  hr();txt('Segundo plato',500,56,SER,BLUE,1.3);y+=8*K;list(m.segundos);
+  hr();txt('Postres',500,56,SER,BLUE,1.3);y+=6*K;txt(m.postres,500,40,SER,'#111',1.3);
+  y+=34*K;const rh=76*K;if(d){x.textBaseline='middle';x.fillStyle='#111';x.textAlign='left';x.font=`600 ${56*K}px ${SER}`;if(vis('precios')){x.fillText('Menú: '+m.precio,cx-390,y+rh/2);x.textAlign='right';x.font=`500 ${40*K}px ${SER}`;x.fillText('Medio menú: '+m.medio,cx+390,y+rh/2)}}y+=rh;
+  if(m.nota){y+=18*K;const h=84*K;if(d){x.fillStyle='#e8eef7';x.fillRect(cx-390,y,780,h);x.fillStyle=BD;x.textAlign='center';x.font=`500 ${38*K}px ${SAN}`;x.fillText(m.nota,cx,y+h/2)}y+=h}
+  return y-Y};
+ let K=1.2;while(K>0.5&&run(K,0,false)>1640)K-=0.04;
+ const tot=run(K,0,false);
+ x.fillStyle=BLUE;x.fillRect(0,0,W,H);
+ x.fillStyle='#fff';x.fillRect(50,50,W-100,H-100);
+ x.strokeStyle=BLUE;x.lineWidth=5;x.strokeRect(50,50,W-100,H-100);x.lineWidth=2;x.strokeRect(74,74,W-148,H-148);
+ run(K,50+(H-100-tot)/2,true);
+ return new Promise(r=>c.toBlob(r,'image/png'));
+}
+/* ---------- Panel de administración ---------- */
+let tab='inicio',selD=null,calY=null,calM=0,calOpen=false;
+const canShareImg=()=>{try{return !!(navigator.canShare&&navigator.canShare({files:[new File([''],'a.png',{type:'image/png'})]}))}catch(e){return false}};
+function calHtml(){const y=calY,m=calM,off=(new Date(Date.UTC(y,m,1)).getUTCDay()+6)%7,n=new Date(Date.UTC(y,m+1,0)).getUTCDate(),tk=todayKey(),M=S.carta.menus;let c='';
+ for(let i=0;i<off;i++)c+='<i></i>';
+ for(let d=1;d<=n;d++){const k=y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0');c+=`<button type="button" class="cd${k===selD?' sel':''}${k===tk?' tod':''}${M[k]?' has':''}" data-d="${k}">${d}</button>`}
+ const nm=new Date(Date.UTC(y,m,1)).toLocaleDateString('es-ES',{month:'long',timeZone:'UTC'});
+ return `<div class="cal"><div class="ch"><button type="button" class="sm" data-cal="-1" aria-label="Mes anterior">‹</button><b>${nm} ${y}</b><button type="button" class="sm" data-cal="1" aria-label="Mes siguiente">›</button></div><div class="cw">${['L','M','X','J','V','S','D'].map(x=>`<span>${x}</span>`).join('')}</div><div class="cg">${c}</div><small>Punto = día con menú · subrayado = hoy</small></div>`}
+const F=(l,p,o={})=>{const v=gp(S,p);const val=Array.isArray(v)?v.join('\n'):v;return `<label>${l}${o.ta||Array.isArray(v)?`<textarea data-p="${p}" ${Array.isArray(v)?'data-list="1"':''}>${esc(val)}</textarea>`:`<input type="text" data-p="${p}" value="${esc(val)}">`}</label>${o.h?`<small>${o.h}</small>`:''}`};
+const I=(l,p)=>`<div class="imgf"><img src="${esc(gp(S,p))}" alt=""><div><b>${l}</b><button class="sm" data-up="${p}">Cambiar imagen</button></div></div>`;
+function tabHtml(){
+ if(tab==='historial'){return `<div class="tip">Cada publicación conserva la versión publicada anteriormente. Puedes recuperar una versión como borrador y revisarla antes de volver a publicar.</div>${versions.length?versions.map(v=>`<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0"><span>${esc(new Date(v.created_at).toLocaleString('es-ES'))}</span><button class="sm" data-restore="${v.id}">Restaurar como borrador</button></div>`).join(''):'<p>No hay versiones anteriores todavía. Se crea una copia al publicar cambios.</p>'}` }
+ if(tab==='visibilidad'){const items=[['inicio','Portada'],['nosotros','Nosotros'],['carta','Bloque Carta de inicio'],['menuDia','Menú del día'],['precios','Precios del menú'],['galeria','Galería'],['contacto','Contacto'],['redes','Redes sociales']];return `<div class="tip">Desactivar un elemento lo oculta en la web pública, pero conserva todos sus datos para volver a mostrarlo cuando quieras.</div>${items.map(([k,n])=>`<label class="chk"><input type="checkbox" data-vis="${k}" ${vis(k)?'checked':''}> ${n}</label>`).join('')}`}
+ if(tab==='inicio'){const i='inicio.';return `<h4>Portada</h4>${I('Imagen de portada',i+'hero.image')}${F('Texto superior',i+'hero.kicker')}${F('Título',i+'hero.title')}${F('Texto del botón',i+'hero.button')}
+ <h4>Nosotros</h4>${I('Imagen',i+'nosotros.image')}${F('Título',i+'nosotros.title')}${F('Texto (un párrafo por línea)',i+'nosotros.text',{ta:1})}
+ <h4>Bloque Carta</h4>${F('Título',i+'carta.title')}${F('Texto',i+'carta.text',{ta:1})}${F('Texto del botón',i+'carta.button')}${[0,1,2].map(n=>I('Imagen '+(n+1),i+'carta.cards.'+n+'.image')+F('Título imagen '+(n+1),i+'carta.cards.'+n+'.title')).join('')}
+ <h4>Banda de 3 fotos</h4>${[0,1,2].map(n=>I('Foto '+(n+1),i+'strip.'+n)).join('')}<h4>Galería (portada)</h4>${F('Título',i+'galeriaTitle')}<small>La portada muestra las 8 primeras fotos de la pestaña Galería.</small>`}
+ if(tab==='carta'){if(!selD)selD=todayKey();if(calY==null){const p=selD.split('-');calY=+p[0];calM=+p[1]-1}
+  const M=S.carta.menus,m=M[selD],p='carta.menus.'+selD+'.';
+  return `<div class="tip">Elige un día en el calendario y escribe su menú. Cada menú se publica solo ese día, a partir de las 00:01 (hora de España). Si un día no tiene menú, se muestra «Hoy no hay menú».</div>
+  <div class="lbl">Fecha menú</div><button type="button" class="dpick" data-calt="1" aria-expanded="${calOpen}"><span>${selD.split('-').reverse().join('/')}</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></button>${calOpen?calHtml():''}
+  <h4>Menú del ${esc(fmtLong(selD))}</h4>
+  ${m?F('Primeros platos',p+'primeros',{h:'Un plato por línea.'})+F('Segundos platos',p+'segundos',{h:'Un plato por línea.'})+F('Postres',p+'postres',{ta:1})+F('Precio menú',p+'precio')+F('Precio medio menú',p+'medio')+F('Nota inferior',p+'nota')+`<div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap"><button class="sm" data-go="carta">Ver la carta</button><button class="sm red" data-mk="del">Borrar este menú</button></div>`
+   :`<p style="color:var(--mut)">Este día no tiene menú.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="sm" data-mk="copy">Crear copiando el último menú</button><button class="sm" data-mk="blank">Crear en blanco</button></div>`}
+  <h4>Título de la carta</h4>${F('Título','carta.title')}
+  <div style="margin-top:14px"><button class="sm" data-mk="prune">Borrar menús de días pasados</button></div>
+  <h4>Imagen para WhatsApp</h4>${m?`<p style="margin:6px 0 10px;color:var(--mut);font-size:.9rem">Crea una imagen vertical (formato estado) con el menú del ${esc(fmtLong(selD))}.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="sm" data-mkimg="dl">Descargar imagen del menú</button>${canShareImg()?'<button class="sm" data-mkimg="share">Compartir…</button>':''}</div><div id="mprev" style="display:none;margin-top:12px"><img id="mimg" alt="Vista previa del menú" style="max-width:260px;width:100%;border:1px solid var(--line);border-radius:8px"></div>`:'<p style="color:var(--mut);font-size:.9rem">Crea primero el menú de este día para generar su imagen.</p>'}`}
+ if(tab==='galeria')return `<div class="tip">Las fotos se optimizan y se guardan como archivos independientes en /imagenes/.</div><button class="sm" id="addg">+ Añadir fotos</button><div class="gl">${S.galeria.items.map((s,n)=>`<div><img src="${esc(s)}" alt="" loading="lazy"><span><button data-g="l" data-i="${n}" aria-label="Mover antes">←</button><button data-g="d" data-i="${n}" aria-label="Quitar">✕</button><button data-g="r" data-i="${n}" aria-label="Mover después">→</button></span></div>`).join('')}</div>`;
+ if(tab==='contacto'){const c='contacto.';return F('Título',c+'titulo')+F('Texto',c+'texto',{ta:1})+F('Dirección',c+'direccion',{ta:1})+F('Horario',c+'horario',{ta:1})+F('Teléfono',c+'telefono')+F('Email',c+'email')+F('Facebook (URL)',c+'facebook')+F('Instagram (URL)',c+'instagram')}
+ return `${!isAdmin()?`<div class="tip">Acceso privado al administrador de Portosín. La contraseña se valida en el servidor y no se almacena en el navegador.</div><label>Contraseña de administrador<input type="password" id="admin-pass" autocomplete="current-password"></label><button class="sm" id="admin-login" style="margin-top:12px">Entrar</button>`:`<h4>Base de datos</h4><div class="tip">${serverReady?'SQLite está activa. La web ya consulta los datos del hosting.':'Todavía no hay una base de datos inicializada.'}</div><p>Los contenidos se guardan en <b>private/storage/portosin.sqlite</b> y las fotografías en <b>imagenes/</b>.</p><h4>Migración desde GitHub</h4><p>Lee el data.json del repositorio configurado en config.json, transforma el formato antiguo, copia los datos a SQLite y extrae las imágenes a su directorio. No borra ni modifica GitHub.</p><button class="sm" id="migrate-now">Migrar datos desde GitHub</button><h4>Publicación</h4><p>Los cambios que editas se guardan como borrador y se muestran en esta sesión para que puedas revisarlos. La web pública solo cambia al publicar.</p><button class="sm" id="publish-now">Publicar cambios en la web</button><h4>Sesión</h4><button class="sm red" id="admin-logout">Cerrar sesión</button>`}<div style="text-align:right;margin-top:28px;font-size:.8rem;color:var(--mut)">Portosín ${APP_VERSION}</div>`;
+}
+function openDlg(){const d=$('#dlg'),adm=isAdmin(),sc=d.scrollTop;if(!adm)tab='con';
+ const T=adm?[['visibilidad','Visibilidad'],['inicio','Inicio'],['carta','Carta'],['galeria','Galería'],['contacto','Contacto'],['historial','Historial'],['con','Sistema']]:[['con','Acceso']];
+ d.innerHTML=`<div class="dh"><b>Configuración</b><span class="st" id="st"></span><button class="sm" id="x">Cerrar</button></div><div class="tabs">${T.map(t=>`<button data-t="${t[0]}" class="${tab===t[0]?'on':''}">${t[1]}</button>`).join('')}</div><div class="db">${tabHtml()}</div>`;
+ if(!d.open)d.showModal();d.scrollTop=sc}
+const dlg=$('#dlg');
+dlg.addEventListener('click',async e=>{const t=e.target;
+ if(t.id==='x')return dlg.close();
+ if(t.dataset.t){tab=t.dataset.t;openDlg();dlg.scrollTop=0;return}
+ if(t.closest('[data-calt]')){calOpen=!calOpen;return openDlg()}
+ if(t.dataset.mkimg){const mode=t.dataset.mkimg;setSt('Creando imagen…');
+  try{const blob=await menuImage(selD);if(!blob)throw new Error('sin menú');const name='menu-portosin-'+selD+'.png',url=URL.createObjectURL(blob);
+   const pv=$('#mimg');if(pv){pv.src=url;$('#mprev').style.display='block'}
+   if(mode==='share'){const f=new File([blob],name,{type:'image/png'});try{await navigator.share({files:[f],title:'Menú Portosín'})}catch(err){if(err&&err.name!=='AbortError')throw err}}
+   else{const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();toast('Imagen descargada')}
+   setSt('')}catch(err){setSt('No se pudo crear la imagen',true)}return}
+ if(t.dataset.d){selD=t.dataset.d;calOpen=false;const q=selD.split('-');calY=+q[0];calM=+q[1]-1;return openDlg()}
+ if(t.dataset.cal){calM+=+t.dataset.cal;if(calM<0){calM=11;calY--}if(calM>11){calM=0;calY++}return openDlg()}
+ if(t.dataset.mk){const k=t.dataset.mk,M=S.carta.menus,ks=Object.keys(M).sort();
+  if(k==='copy'||k==='blank'){const prev=ks.filter(x=>x<selD).pop()||ks.pop(),b=JSON.parse(JSON.stringify(prev?M[prev]:EX));M[selD]=k==='copy'?b:Object.assign(b,{primeros:[],segundos:[],postres:''})}
+  else if(k==='del'){if(!confirm('¿Borrar el menú de este día?'))return;delete M[selD]}
+  else if(k==='prune'){const tk=todayKey(),old=ks.filter(x=>x<tk);if(!old.length)return toast('No hay menús pasados');if(!confirm('¿Borrar '+old.length+' menú(s) de días pasados?'))return;old.forEach(x=>delete M[x])}
+  save();repaint();return openDlg()}
+ if(t.dataset.go){dlg.close();location.hash='#'+t.dataset.go;return}
+ if(t.dataset.up){up=t.dataset.up;$('#file').value='';return $('#file').click()}
+ if(t.id==='addg'){$('#files').value='';return $('#files').click()}
+ if(t.dataset.g){const a=S.galeria.items,i=+t.dataset.i,k=t.dataset.g;if(k==='d'){if(!confirm('¿Quitar esta foto de la galería?'))return;a.splice(i,1)}else{const j=k==='l'?i-1:i+1;if(j<0||j>=a.length)return;[a[i],a[j]]=[a[j],a[i]]}save();repaint();return openDlg()}
+ if(t.id==='admin-login'){const pw=$('#admin-pass')?.value||'';setSt('Comprobando acceso…');try{await apiPost({action:'auth',password:pw});serverAdmin=true;await pull();tab='visibilidad';repaint();openDlg();toast('Sesión iniciada')}catch(err){setSt(err.message,true)}return}
+ if(t.id==='publish-now'){if(!confirm('Los cambios guardados se harán visibles para todos los visitantes. ¿Publicar ahora?'))return;try{await apiPost({action:'publish'});await pull();repaint();toast('Cambios publicados en la web');setSt('Publicación completada')}catch(err){setSt(err.message,true)}return}
+ if(t.dataset.restore){if(!confirm('Se recuperará esta versión como borrador. La web pública no cambiará hasta que vuelvas a publicar. ¿Continuar?'))return;try{await apiPost({action:'restore',version_id:+t.dataset.restore});await pull();tab='visibilidad';repaint();openDlg();toast('Versión recuperada como borrador')}catch(err){setSt(err.message,true)}return}
+ if(t.id==='admin-logout'){try{await apiPost({action:'logout'})}catch(_){}serverAdmin=false;sessionStorage.removeItem('pt_gear');repaint();return dlg.close()}
+ if(t.id==='migrate-now'){if(!confirm('Se copiarán los datos de GitHub a SQLite. No se borrará el JSON original. ¿Continuar?'))return;try{setSt('Migrando…');const j=await migrateFromGitHub();setSt('Migración completada');toast('Datos migrados a SQLite');tab='visibilidad';openDlg()}catch(err){setSt(err.message,true)}return}
+});
+dlg.addEventListener('input',e=>{const t=e.target;if(t.dataset.p){const v=t.dataset.list?t.value.split('\n').map(x=>x.trim()).filter(Boolean):t.value;sp(S,t.dataset.p,v);save();repaint()}});
+dlg.addEventListener('change',e=>{const t=e.target;if(t.dataset.c){sp(S,t.dataset.c,t.checked);save();repaint()}if(t.dataset.vis){S.visibilidad=S.visibilidad||{};S.visibilidad[t.dataset.vis]=t.checked;save();repaint();openDlg()}});
+let up='';
+$('#file').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{sp(S,up,await shrink(f,up.includes('hero')?1600:1280));save();repaint();openDlg()}catch(err){toast(err.message)}});
+$('#files').addEventListener('change',async e=>{let n=0;for(const f of e.target.files){try{S.galeria.items.push(await shrink(f));n++}catch(_){}}if(n){save();repaint();openDlg();toast(n+' foto(s) añadida(s)')}});
+$('#gear').onclick=()=>{tab=isAdmin()?'inicio':'con';openDlg()};
+let tap=[];
+document.addEventListener('click',e=>{
+ if(e.target.matches('#foot img')){const n=Date.now();tap=tap.filter(x=>n-x<4000);tap.push(n);if(tap.length>=5){tap=[];sessionStorage.setItem('pt_gear','1');$('#gear').hidden=false;toast('Configuración activada')}}
+ if(e.target.id==='ed'){tab='inicio';openDlg()}
+ if(e.target.matches('.grid img')){const l=$('#lb');l.querySelector('img').src=e.target.src;l.classList.add('open')}
+ if(e.target.closest('#lb'))$('#lb').classList.remove('open')});
+$('#burger').onclick=()=>{const o=$('#nav').classList.toggle('open');$('#burger').setAttribute('aria-expanded',o)};
+addEventListener('keydown',e=>{if(e.key==='Escape'){$('#lb').classList.remove('open');$('#nav').classList.remove('open');$('#burger').setAttribute('aria-expanded','false')}else if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('.grid img')){e.preventDefault();e.target.click()}});
+let lastK=todayKey();const tick=()=>{const k=todayKey();if(k!==lastK){lastK=k;repaint()}};
+setInterval(tick,15000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)tick()});
+addEventListener('hashchange',route);
+addEventListener('online',async()=>{await pull();repaint();toast('Conexión recuperada; contenidos actualizados')});
+(async()=>{const cp=fetch('config.json').then(r=>r.json()).catch(()=>({}));
+ let had=false;try{const c=LS.getItem('pt_cache');if(c){S=merge(DEF,JSON.parse(c));had=true}}catch(e){}
+ if(had)route();CONF=await cp;const before=JSON.stringify(S);await pull();
+ try{const r=await fetch('api/index.php',{cache:'no-store',credentials:'same-origin'});const j=await r.json();serverReady=!!j.migrated;}catch(_){}
+ // La sesión del administrador se comprueba con una petición protegida al intentar guardar; no se guarda contraseña localmente.
+ if(!had)route();else if(JSON.stringify(S)!==before)repaint();
+ if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+})();
+</script>
+</body>
+</html>
