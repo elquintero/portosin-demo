@@ -132,6 +132,7 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
 </style>
 </head>
 <body>
+<div class="adm" style="background:#8b4b12">DEMO VISUAL · Los cambios solo se guardan en este navegador · Contraseña: <b>demo</b></div>
 <a class="skip" href="#app" onclick="document.getElementById('app').focus()">Saltar al contenido</a>
 <header class="top"><div class="wrap bar">
  <a class="logo" href="#inicio" aria-label="Cafetería Portosín"><img src="assets/img/logo.png" alt="Portosín"></a>
@@ -153,7 +154,8 @@ h1,h2,h3{text-wrap:balance}p{text-wrap:pretty}
 'use strict';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const para=t=>String(t||'').split(/\n+/).filter(x=>x.trim()).map(x=>`<p>${esc(x)}</p>`).join('');
-const APP_VERSION='2.0.0';
+const APP_VERSION='2.0.1 DEMO';
+const DEMO_MODE=true; // Demo visual: no PHP, no SQLite, no GitHub writes
 const mkey=t=>new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Madrid',year:'numeric',month:'2-digit',day:'2-digit'}).format(t);
 const todayKey=()=>mkey(Date.now()-60000); // el día cambia a las 00:01 (hora de España)
 const fmtLong=k=>{const d=new Date(k+'T12:00:00Z').toLocaleDateString('es-ES',{weekday:'long',day:'numeric',month:'long',timeZone:'UTC'});return d.charAt(0).toUpperCase()+d.slice(1)};
@@ -176,11 +178,21 @@ const merge=(d,s)=>{if(Array.isArray(d)||typeof d!=='object'||d===null)return s=
 const gp=(o,p)=>p.split('.').reduce((a,k)=>a==null?a:a[k],o);
 const sp=(o,p,v)=>{const k=p.split('.'),l=k.pop();const t=k.reduce((a,x)=>a[x],o);t[l]=v};
 let S=clone(DEF),cfg={},LS=localStorage,serverAdmin=false,serverReady=false,versions=[];
+const DEMO_KEY='portosin_demo_data_v1', DEMO_VERSIONS='portosin_demo_versions_v1';
 const PATH='data.json';let timer=null,pushing=false,again=false,CONF={repo:'elquintero/portosin-data',branch:'main'};
 const repo=()=>cfg.repo||CONF.repo;
 const isAdmin=()=>serverAdmin;
 const vis=k=>S.visibilidad?.[k]!==false;
-const apiPost=async body=>{const r=await fetch('api/index.php',{method:'POST',headers:{'Content-Type':'application/json'},credentials:'same-origin',body:JSON.stringify(body)});const j=await r.json().catch(()=>({error:'Respuesta inválida del servidor'}));if(!r.ok)throw new Error(j.error||('Error '+r.status));return j;}
+const apiPost=async body=>{
+ if(!DEMO_MODE)throw new Error('Esta demo no tiene conexión con el servidor.');
+ if(body.action==='auth'){if(body.password!=='demo')throw new Error('En la demo, la contraseña es: demo');serverAdmin=true;return {ok:true}}
+ if(body.action==='logout'){serverAdmin=false;return {ok:true}}
+ if(body.action==='save'){if(!serverAdmin)throw new Error('Inicia sesión');S=merge(DEF,body.data);LS.setItem(DEMO_KEY,JSON.stringify(S));return {ok:true,data:S}}
+ if(body.action==='publish'){if(!serverAdmin)throw new Error('Inicia sesión');versions.unshift({id:Date.now(),created_at:new Date().toISOString(),data:clone(S)});versions=versions.slice(0,8);LS.setItem(DEMO_VERSIONS,JSON.stringify(versions));LS.setItem(DEMO_KEY,JSON.stringify(S));return {ok:true}}
+ if(body.action==='restore'){const v=versions.find(x=>x.id===body.version_id);if(!v)throw new Error('Versión no encontrada');S=merge(DEF,v.data);LS.setItem(DEMO_KEY,JSON.stringify(S));return {ok:true,data:S}}
+ if(body.action==='migrate')throw new Error('La migración está desactivada en la demo.');
+ return {ok:true};
+}
 const toast=(m)=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2200)};
 /* ---------- Páginas ---------- */
 const im=(s,alt='',x='')=>s?`<img src="${esc(s)}" alt="${esc(alt)}" loading="lazy" decoding="async"${x}>`:'';
@@ -221,9 +233,13 @@ function repaint(){route.keep=true;route();route.keep=false}
 /* ---------- Persistencia: API PHP + SQLite ---------- */
 function setSt(m,err){const s=$('#st');if(s){s.textContent=m;s.classList.toggle('err',!!err)}}
 async function pull(){
+ if(DEMO_MODE){
+  try{const d=LS.getItem(DEMO_KEY);S=d?merge(DEF,JSON.parse(d)):clone(DEF);versions=JSON.parse(LS.getItem(DEMO_VERSIONS)||'[]');}catch(e){S=clone(DEF);versions=[]}
+  serverReady=false;return;
+ }
  try{const r=await fetch('api/index.php',{cache:'no-store',credentials:'same-origin'});if(!r.ok)throw new Error('No se pudo leer la base de datos');const j=await r.json();serverAdmin=!!j.admin;versions=j.versions||[];if(j.migrated&&j.data){S=merge(DEF,j.data);serverReady=true;try{LS.setItem('pt_cache',JSON.stringify(S))}catch(e){}}
   else{serverReady=false;try{const u=`https://raw.githubusercontent.com/${repo()}/${CONF.branch||'main'}/data.json`,g=await fetch(u,{cache:'no-store'});if(g.ok)S=convertLegacy(await g.json());}catch(_){}}
- }catch(e){try{const c=LS.getItem('pt_cache');if(c)S=merge(DEF,JSON.parse(c));else{const r=await fetch('data.json');if(r.ok)S=merge(DEF,await r.json())}}catch(_){} }
+ }catch(e){try{const c=LS.getItem('pt_cache');if(c)S=merge(DEF,JSON.parse(c));else{const r=await fetch('data.json');if(r.ok)S=merge(DEF,await r.json())}}catch(_){}}
 }
 function convertLegacy(legacy){
  const migrated=clone(DEF);for(const k of ['inicio','galeria','contacto'])if(legacy[k])migrated[k]=merge(migrated[k],legacy[k]);
@@ -234,7 +250,7 @@ function convertLegacy(legacy){
 function save(){setSt('Cambios pendientes…');clearTimeout(timer);try{LS.setItem('pt_cache',JSON.stringify(S))}catch(e){}if(isAdmin())timer=setTimeout(push,700)}
 async function push(){
  if(pushing){again=true;return}if(!isAdmin()){setSt('Inicia sesión para guardar',true);return}
- pushing=true;setSt('Guardando en SQLite…');try{const j=await apiPost({action:'save',data:S});S=merge(DEF,j.data);serverReady=true;try{LS.setItem('pt_cache',JSON.stringify(S))}catch(e){}setSt('Borrador guardado '+new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}));repaint();}
+ pushing=true;setSt(DEMO_MODE?'Guardando en esta demostración…':'Guardando en SQLite…');try{const j=await apiPost({action:'save',data:S});S=merge(DEF,j.data);serverReady=true;try{LS.setItem('pt_cache',JSON.stringify(S))}catch(e){}setSt('Borrador guardado '+new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}));repaint();}
  catch(e){setSt(e.message,true);toast('No se pudieron guardar los cambios')}finally{pushing=false;if(again){again=false;push()}}
 }
 async function migrateFromGitHub(){
@@ -305,7 +321,7 @@ function tabHtml(){
   <h4>Imagen para WhatsApp</h4>${m?`<p style="margin:6px 0 10px;color:var(--mut);font-size:.9rem">Crea una imagen vertical (formato estado) con el menú del ${esc(fmtLong(selD))}.</p><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="sm" data-mkimg="dl">Descargar imagen del menú</button>${canShareImg()?'<button class="sm" data-mkimg="share">Compartir…</button>':''}</div><div id="mprev" style="display:none;margin-top:12px"><img id="mimg" alt="Vista previa del menú" style="max-width:260px;width:100%;border:1px solid var(--line);border-radius:8px"></div>`:'<p style="color:var(--mut);font-size:.9rem">Crea primero el menú de este día para generar su imagen.</p>'}`}
  if(tab==='galeria')return `<div class="tip">Las fotos se optimizan y se guardan como archivos independientes en /imagenes/.</div><button class="sm" id="addg">+ Añadir fotos</button><div class="gl">${S.galeria.items.map((s,n)=>`<div><img src="${esc(s)}" alt="" loading="lazy"><span><button data-g="l" data-i="${n}" aria-label="Mover antes">←</button><button data-g="d" data-i="${n}" aria-label="Quitar">✕</button><button data-g="r" data-i="${n}" aria-label="Mover después">→</button></span></div>`).join('')}</div>`;
  if(tab==='contacto'){const c='contacto.';return F('Título',c+'titulo')+F('Texto',c+'texto',{ta:1})+F('Dirección',c+'direccion',{ta:1})+F('Horario',c+'horario',{ta:1})+F('Teléfono',c+'telefono')+F('Email',c+'email')+F('Facebook (URL)',c+'facebook')+F('Instagram (URL)',c+'instagram')}
- return `${!isAdmin()?`<div class="tip">Acceso privado al administrador de Portosín. La contraseña se valida en el servidor y no se almacena en el navegador.</div><label>Contraseña de administrador<input type="password" id="admin-pass" autocomplete="current-password"></label><button class="sm" id="admin-login" style="margin-top:12px">Entrar</button>`:`<h4>Base de datos</h4><div class="tip">${serverReady?'SQLite está activa. La web ya consulta los datos del hosting.':'Todavía no hay una base de datos inicializada.'}</div><p>Los contenidos se guardan en <b>private/storage/portosin.sqlite</b> y las fotografías en <b>imagenes/</b>.</p><h4>Migración desde GitHub</h4><p>Lee el data.json del repositorio configurado en config.json, transforma el formato antiguo, copia los datos a SQLite y extrae las imágenes a su directorio. No borra ni modifica GitHub.</p><button class="sm" id="migrate-now">Migrar datos desde GitHub</button><h4>Publicación</h4><p>Los cambios que editas se guardan como borrador y se muestran en esta sesión para que puedas revisarlos. La web pública solo cambia al publicar.</p><button class="sm" id="publish-now">Publicar cambios en la web</button><h4>Sesión</h4><button class="sm red" id="admin-logout">Cerrar sesión</button>`}<div style="text-align:right;margin-top:28px;font-size:.8rem;color:var(--mut)">Portosín ${APP_VERSION}</div>`;
+ return `${!isAdmin()?`<div class="tip">Modo demostración: puedes explorar el administrador y modificar datos de ejemplo. Los cambios se guardan únicamente en este navegador.</div><label>Contraseña de demostración<input type="password" id="admin-pass" autocomplete="current-password"></label><button class="sm" id="admin-login" style="margin-top:12px">Entrar</button>`:`<h4>Entorno de demostración</h4><div class="tip">No hay conexión con PHP, SQLite ni GitHub. Los cambios se guardan localmente en este navegador y no afectan a la web real.</div><p>Esta demo permite probar el aspecto y la navegación del administrador, editar contenidos, cambiar visibilidades y simular publicaciones.</p><h4>Publicación simulada</h4><p>Al publicar se crea una versión local de demostración. No se publica nada en Internet.</p><button class="sm" id="publish-now">Simular publicación</button><h4>Sesión</h4><button class="sm red" id="admin-logout">Cerrar sesión</button>`}<div style="text-align:right;margin-top:28px;font-size:.8rem;color:var(--mut)">Portosín ${APP_VERSION}</div>`;
 }
 function openDlg(){const d=$('#dlg'),adm=isAdmin(),sc=d.scrollTop;if(!adm)tab='con';
  const T=adm?[['visibilidad','Visibilidad'],['inicio','Inicio'],['carta','Carta'],['galeria','Galería'],['contacto','Contacto'],['historial','Historial'],['con','Sistema']]:[['con','Acceso']];
@@ -337,7 +353,7 @@ dlg.addEventListener('click',async e=>{const t=e.target;
  if(t.id==='publish-now'){if(!confirm('Los cambios guardados se harán visibles para todos los visitantes. ¿Publicar ahora?'))return;try{await apiPost({action:'publish'});await pull();repaint();toast('Cambios publicados en la web');setSt('Publicación completada')}catch(err){setSt(err.message,true)}return}
  if(t.dataset.restore){if(!confirm('Se recuperará esta versión como borrador. La web pública no cambiará hasta que vuelvas a publicar. ¿Continuar?'))return;try{await apiPost({action:'restore',version_id:+t.dataset.restore});await pull();tab='visibilidad';repaint();openDlg();toast('Versión recuperada como borrador')}catch(err){setSt(err.message,true)}return}
  if(t.id==='admin-logout'){try{await apiPost({action:'logout'})}catch(_){}serverAdmin=false;sessionStorage.removeItem('pt_gear');repaint();return dlg.close()}
- if(t.id==='migrate-now'){if(!confirm('Se copiarán los datos de GitHub a SQLite. No se borrará el JSON original. ¿Continuar?'))return;try{setSt('Migrando…');const j=await migrateFromGitHub();setSt('Migración completada');toast('Datos migrados a SQLite');tab='visibilidad';openDlg()}catch(err){setSt(err.message,true)}return}
+ if(t.id==='migrate-now'){if(DEMO_MODE){toast('Migración desactivada en la demo');return}if(!confirm('Se copiarán los datos de GitHub a SQLite. No se borrará el JSON original. ¿Continuar?'))return;try{setSt('Migrando…');const j=await migrateFromGitHub();setSt('Migración completada');toast('Datos migrados a SQLite');tab='visibilidad';openDlg()}catch(err){setSt(err.message,true)}return}
 });
 dlg.addEventListener('input',e=>{const t=e.target;if(t.dataset.p){const v=t.dataset.list?t.value.split('\n').map(x=>x.trim()).filter(Boolean):t.value;sp(S,t.dataset.p,v);save();repaint()}});
 dlg.addEventListener('change',e=>{const t=e.target;if(t.dataset.c){sp(S,t.dataset.c,t.checked);save();repaint()}if(t.dataset.vis){S.visibilidad=S.visibilidad||{};S.visibilidad[t.dataset.vis]=t.checked;save();repaint();openDlg()}});
@@ -357,10 +373,9 @@ let lastK=todayKey();const tick=()=>{const k=todayKey();if(k!==lastK){lastK=k;re
 setInterval(tick,15000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)tick()});
 addEventListener('hashchange',route);
 addEventListener('online',async()=>{await pull();repaint();toast('Conexión recuperada; contenidos actualizados')});
-(async()=>{const cp=fetch('config.json').then(r=>r.json()).catch(()=>({}));
+(async()=>{const cp=Promise.resolve({});
  let had=false;try{const c=LS.getItem('pt_cache');if(c){S=merge(DEF,JSON.parse(c));had=true}}catch(e){}
  if(had)route();CONF=await cp;const before=JSON.stringify(S);await pull();
- try{const r=await fetch('api/index.php',{cache:'no-store',credentials:'same-origin'});const j=await r.json();serverReady=!!j.migrated;}catch(_){}
  // La sesión del administrador se comprueba con una petición protegida al intentar guardar; no se guarda contraseña localmente.
  if(!had)route();else if(JSON.stringify(S)!==before)repaint();
  if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
